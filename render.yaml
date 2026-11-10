@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: internguard-api
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_SERVICE_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+  - type: web
+    name: internguard-ai
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: ai-service
+    buildCommand: pip install -r requirements.txt && python training/train_model.py
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MODEL_PATH
+        value: app/models/internship_risk_classifier.joblib
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: REQUEST_TIMEOUT_SECONDS
+        value: "6"

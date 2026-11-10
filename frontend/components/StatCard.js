@@ -1,0 +1,2 @@
+import { ArrowUpRight } from 'lucide-react';
+export function StatCard({ label, value, detail, icon: Icon }) { return <article className="panel panel-pad"><div className="flex items-start justify-between"><p className="text-sm font-bold text-muted">{label}</p>{Icon && <span className="rounded-lg bg-blue-50 p-2 text-brand"><Icon size={18} /></span>}</div><p className="mt-4 text-3xl font-black tracking-tight text-ink">{value}</p>{detail && <p className="mt-2 flex items-center gap-1 text-xs font-semibold text-muted"><ArrowUpRight size={13} />{detail}</p>}</article>; }

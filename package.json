@@ -1,0 +1,18 @@
+{
+  "name": "internguard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI-assisted internship verification and risk screening platform",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "seed": "npm run seed -w backend",
+    "build": "npm run build -w frontend && npm run build:engine -w backend",
+    "test": "npm run test -w backend && npm run test -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

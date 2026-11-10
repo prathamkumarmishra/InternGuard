@@ -1,0 +1,4 @@
+const labels = { LOW_RISK: 'Low risk', MEDIUM_RISK: 'Medium risk', HIGH_RISK: 'High risk' };
+const styles = { LOW_RISK: 'bg-emerald-50 text-emerald-800 ring-emerald-200', MEDIUM_RISK: 'bg-amber-50 text-amber-800 ring-amber-200', HIGH_RISK: 'bg-red-50 text-red-800 ring-red-200' };
+export function RiskBadge({ level = 'LOW_RISK' }) { return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-extrabold ring-1 ring-inset ${styles[level] || styles.LOW_RISK}`}>{labels[level] || level?.replace('_', ' ')}</span>; }
+export function VerificationBadge({ status = 'PENDING' }) { const tone = status === 'VERIFIED' || status === 'MATCHED' ? 'bg-emerald-50 text-emerald-800' : status === 'NOT_FOUND' ? 'bg-slate-100 text-slate-700' : 'bg-amber-50 text-amber-800'; return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-bold ${tone}`}>{status.replaceAll('_', ' ')}</span>; }

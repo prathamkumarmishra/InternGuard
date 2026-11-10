@@ -1,0 +1,2 @@
+import { Info } from 'lucide-react';
+export function ScreeningNotice() { return <div className="flex gap-3 rounded-xl border border-blue-100 bg-blue-50 px-4 py-3 text-sm leading-6 text-blue-950"><Info className="mt-0.5 shrink-0 text-brand" size={18} /><p><strong>Screening, not a legal determination.</strong> InternGuard uses available data and submitted information to surface risk signals. Always review the cited evidence and independently verify important details.</p></div>; }

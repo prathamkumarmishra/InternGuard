@@ -1,0 +1,7 @@
+export const dashboardDemo = { stats: { totalOrganizations: 20, verifiedOrganizations: 10, pendingReviews: 10, highRiskCases: 5, complaints: 50, internshipsAnalyzed: 30 }, riskDistribution: [{ _id: 'LOW_RISK', count: 7 }, { _id: 'MEDIUM_RISK', count: 8 }, { _id: 'HIGH_RISK', count: 5 }], complaintsByCategory: [{ _id: 'PAYMENT_REQUEST', count: 12 }, { _id: 'FAKE_INTERNSHIP_OFFER', count: 9 }, { _id: 'NON_RESPONSE', count: 7 }, { _id: 'OTHER', count: 6 }] };
+export const sampleOrganizations = [
+  { _id: 'demo-asterline', name: 'Asterline Labs', state: 'Karnataka', riskScore: 12, riskLevel: 'LOW_RISK', verificationStatus: 'VERIFIED', registration: { status: 'VERIFIED' }, website: 'https://asterline.demo.local', updatedAt: '2026-09-11' },
+  { _id: 'demo-civicgrid', name: 'CivicGrid Technologies', state: 'Delhi', riskScore: 38, riskLevel: 'MEDIUM_RISK', verificationStatus: 'MANUAL_REVIEW', registration: { status: 'NEEDS_REVIEW' }, website: 'https://civicgrid.demo.local', updatedAt: '2026-09-10' },
+  { _id: 'demo-dawnbyte', name: 'Dawnbyte Studio', state: 'Tamil Nadu', riskScore: 66, riskLevel: 'HIGH_RISK', verificationStatus: 'MANUAL_REVIEW', registration: { status: 'NEEDS_REVIEW' }, website: 'https://dawnbyte.demo.local', updatedAt: '2026-09-09' },
+  { _id: 'demo-greencrest', name: 'Greencrest Solutions', state: 'Gujarat', riskScore: 75, riskLevel: 'HIGH_RISK', verificationStatus: 'PENDING', registration: { status: 'NOT_FOUND' }, website: 'https://greencrest.demo.local', updatedAt: '2026-09-08' }
+];

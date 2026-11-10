@@ -1,0 +1,12 @@
+const router = require('express').Router();
+const validate = require('../middleware/validate');
+const { authenticate, allowRoles } = require('../middleware/authMiddleware');
+const controller = require('../controllers/adminController');
+router.use(authenticate, allowRoles('ADMIN', 'VERIFIER'));
+router.get('/dashboard', controller.dashboard);
+router.get('/reviews', controller.reviews);
+router.put('/reviews/:id', controller.reviewValidation, validate, controller.updateReview);
+router.put('/organizations/:id/status', controller.orgStatusValidation, validate, controller.updateOrganizationStatus);
+router.get('/analytics', controller.analytics);
+router.get('/audit-logs', controller.auditLogs);
+module.exports = router;
